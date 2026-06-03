@@ -6,6 +6,7 @@ import Inicio from "./screens/Inicio";
 import EditarLocal from "./screens/EditarLocal";
 import ConfirmarEntrega from "./screens/ConfirmarEntrega";
 import PedidoFinalizado from "./screens/PedidoFinalizado";
+import Acompanhamento from "./screens/Acompanhamento";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,7 +28,8 @@ export default function App() {
   name="ConfirmarEntrega"
   component={ConfirmarEntrega}
   options={{ headerShown: false }}
-/>
+  />
+
 <Stack.Screen
   name="PedidoFinalizado"
   component={PedidoFinalizado}
@@ -35,10 +37,18 @@ export default function App() {
   onPress={() =>
   navigation.reset({
     index: 0,
-    routes: [{ name: "Delivery" }],
+    routes: [{ name: "PedidoFinalizadoD" }],
+
+    
   })
 }
   />
+  <Stack.Screen
+    name="Acompanhamento"
+    component={Acompanhamento}
+    options={{ headerShown: false}}
+    />
+    
   
       </Stack.Navigator>
     </NavigationContainer>
