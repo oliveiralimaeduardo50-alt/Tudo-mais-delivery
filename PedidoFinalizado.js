@@ -1,93 +1,37 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function PedidoFinalizado({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <Ionicons name="checkmark-circle" size={100} color="#00cc66" />
+        
+        <Text style={styles.titulo}>Pedido Finalizado! 🎉</Text>
+        <Text style={styles.subtitulo}>Tempo estimado de entrega: 30 - 45 min</Text>
+        <Text style={styles.agradecimento}>
+          Obrigado por comprar na TudoMais+ ❤️{"\n"}Seu pedido já está sendo preparado!
+        </Text>
+      </View>
 
-      {/* emoji confirmado */}
-      <Ionicons
-        name="checkmark-circle"
-        size={120}
-        color="#22c55e"
-        style={{ alignSelf: "center", marginTop: 80 }}
-      />
-
-      {/* mensagem da compra */}
-      <Text style={styles.title}>Pedido Finalizado 🎉</Text>
-
-      {/* tempo estimado */}
-      <Text style={styles.time}>
-        Tempo estimado de entrega: 30 - 45 min
-      </Text>
-
-      {/* Mensagem */}
-      <Text style={styles.message}>
-        Obrigado por comprar em nossa loja ❤️{"\n"}
-        Seu pedido já está sendo preparado!
-      </Text>
-
-      {/* Botão voltar ao início */}
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("Delivery")}
+      {/* Mudamos o botão para levar à tela de acompanhamento */}
+      <TouchableOpacity 
+        style={styles.botao} 
+        onPress={() => navigation.navigate("Acompanhamento")} 
       >
-        <Text style={styles.buttonText}>Voltar ao início</Text>
+        <Text style={styles.textoBotao}>Acompanhar Pedido 🚚</Text>
       </TouchableOpacity>
-
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#000",
-    alignItems: "center",
-    padding: 20,
-  },
-
-  title: {
-    color: "#fff",
-    fontSize: 28,
-    fontWeight: "bold",
-    marginTop: 30,
-  },
-
-  time: {
-    color: "#22c55e",
-    fontSize: 18,
-    marginTop: 20,
-    fontWeight: "600",
-  },
-
-  message: {
-    color: "#fff",
-    fontSize: 16,
-    textAlign: "center",
-    marginTop: 20,
-    lineHeight: 24,
-  },
-
-  button: {
-    backgroundColor: "#22c55e",
-    padding: 18,
-    borderRadius: 20,
-    marginTop: 50,
-    width: "100%",
-    alignItems: "center",
-  },
-
-  buttonText: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
-  },
+  container: { flex: 1, backgroundColor: "#000000", padding: 20, justifyContent: "space-between" },
+  content: { flex: 1, justifyContent: "center", alignItems: "center", gap: 15 },
+  titulo: { color: "#fff", fontSize: 24, fontWeight: "bold" },
+  subtitulo: { color: "#00cc66", fontSize: 16, fontWeight: "600" },
+  agradecimento: { color: "#fff", textAlign: "center", fontSize: 14, lineHeight: 20 },
+  botao: { backgroundColor: "#ff6b00", padding: 18, borderRadius: 18, alignItems: "center", marginBottom: 20 },
+  textoBotao: { color: "#fff", fontSize: 18, fontWeight: "bold" },
 });
