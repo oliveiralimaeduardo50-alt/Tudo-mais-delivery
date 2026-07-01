@@ -22,3 +22,4 @@ Você pode testar este projeto direto pelo navegador
 ### Executar direto pelo Navegador (Online)
 Para visualizar e rodar o fluxo do aplicativo sem precisar baixar o código, acesse o link abaixo:
 👉 **[Clique aqui para abrir o programador online](https://snack.expo.dev/)** 
+<img width="702" height="1600" alt="imagem1 jpg" src="https://github.com/user-attachments/assets/71b131c6-7ff0-4eee-8978-10004519b4c5" />
